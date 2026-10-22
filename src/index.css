@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Fraunces', Georgia, serif;
+    --font-mono: 'Space Mono', monospace;
+    
+    --bg-dark: #090909;
+    --bg-charcoal: #141414;
+    --bg-surface: #191919;
+    --text-ivory: #F1EEE8;
+    --text-muted: #A7A39D;
+    --accent-gold: #D4AF37;
+    --accent-bronze: #B58A60;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #090909;
+    color: #F1EEE8;
+    overflow-x: hidden;
+  }
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-technical {
+  font-family: var(--font-mono);
+}
+
+/* Subtle Film Grain Overlay */
+.cinema-grain {
+  background-image: radial-gradient(rgba(241, 238, 232, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Cinemascope letterbox aspect ratio */
+.aspect-cinemascope {
+  aspect-ratio: 2.39 / 1;
+}
+
+/* Performance: compositor layer optimization */
+.gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Custom minimal dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090909;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Accessibility: Strict Prefers-Reduced-Motion Compliance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-pulse,
+  .animate-bounce,
+  .cinema-grain {
+    animation: none !important;
+  }
+}

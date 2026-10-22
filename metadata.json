@@ -1,0 +1,8 @@
+{
+  "name": "Lumen & Form — Studio Creativo y Brand Films",
+  "description": "Portafolio cinematográfico de branding, dirección de arte y producción audiovisual para marcas con propósito.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
